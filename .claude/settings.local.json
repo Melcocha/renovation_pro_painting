@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:paintarray.com)",
+      "WebFetch(domain:ipandr.com)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\" -Force | Select-Object Name, @{Name='Type';Expression={if\\($_.PSIsContainer\\){'Directory'}else{'File'}}})",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\" -Depth 1 | Where-Object {$_.Name -notlike \"node_modules\"} | Select-Object Name, @{Name='Type';Expression={if\\($_.PSIsContainer\\){'Dir'}else{'File'}}})",
+      "PowerShell(tree -L 2 -I 'node_modules' \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\")",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\" -Exclude \"node_modules\" -Recurse | ForEach-Object { if \\($_.PSIsContainer\\) { $_.FullName.Replace\\('c:\\\\Users\\\\mrart\\\\renovation_pro_painting', ''\\).TrimStart\\('\\\\'\\) + ' [DIR]' } else { $_.FullName.Replace\\('c:\\\\Users\\\\mrart\\\\renovation_pro_painting', ''\\).TrimStart\\('\\\\'\\) } } | Sort-Object)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\src\\\\logo\\\\logo_empresa.png\" \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\public\\\\logo_empresa.png\")",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\src\\\\logo\\\\logo_empresa-removebg-preview.png\" \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\public\\\\logo_empresa.png\" -Force)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\src\\\\logo\\\\logo_letra.png\" \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\public\\\\logo_letra.png\" -Force)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\src\\\\videos\\\\video1.mp4\" \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\public\\\\videos\\\\video1.mp4\" -Force)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\src\\\\videos\\\\video2.mp4\" \"c:\\\\Users\\\\mrart\\\\renovation_pro_painting\\\\public\\\\videos\\\\video2.mp4\" -Force)"
+    ]
+  }
+}
