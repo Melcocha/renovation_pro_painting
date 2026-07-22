@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="logo_letra.png" type="image/png" />
+  <link rel="apple-touch-icon" href="logo_letra.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0D14" />
+  <meta name="description" content="Learn about Renovation Pro Painting LLC — Maryland's trusted MHIC #168377 licensed painting and remodeling contractor." />
+  <title>About Us | Renovation Pro Painting LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark: #0C2040;
+      --dark2: #112848;
+      --dark3: #183456;
+      --gold: #29B5E8;
+      --gold-light: #52C6F0;
+      --gold-dark: #1A86C0;
+      --white: #FFFFFF;
+      --offwhite: #F0F6FA;
+      --gray100: #F3F4F6;
+      --gray200: #E5E7EB;
+      --gray400: #9CA3AF;
+      --gray600: #4B5563;
+      --gray800: #1F2937;
+      --font-h: 'Montserrat', sans-serif;
+      --font-s: 'Cormorant Garamond', serif;
+      --font-b: 'Inter', sans-serif;
+      --shadow-gold: 0 4px 30px rgba(41,181,232,0.25);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.3);
+      --tr: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      --r-sm: 4px; --r-md: 8px; --r-lg: 16px; --r-xl: 24px;
+    }
+    body { font-family: var(--font-b); color: var(--gray800); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .lbl { font-family: var(--font-h); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px; }
+    .ttl { font-family: var(--font-h); font-size: clamp(28px,4vw,48px); font-weight: 800; line-height: 1.1; color: var(--dark); }
+    .sub { font-size: 16px; color: var(--gray600); max-width: 580px; margin-top: 16px; line-height: 1.7; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 32px; font-family: var(--font-h); font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-radius: var(--r-sm); cursor: pointer; border: none; transition: var(--tr); white-space: nowrap; }
+    .btn-gold { background: var(--gold); color: var(--dark); }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(41,181,232,0.4); }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 5px 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .nav__in { display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo-img { height: 85px; width: auto; display: block; }
+    .nav__links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav__links a { font-family: var(--font-h); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; text-decoration: none; transition: var(--tr); }
+    .nav__links a:hover, .nav__links a.active { color: var(--gold); }
+    .nav__cta { display: flex; align-items: center; gap: 20px; }
+    .nav__phone { font-family: var(--font-h); font-size: 13px; font-weight: 700; color: #4B5563; text-decoration: none; }
+
+    /* HEADER */
+    .page-hd { padding: 160px 0 60px; background: var(--dark); color: var(--white); text-align: center; }
+    .page-hd .ttl { color: var(--white); }
+    .page-hd .sub { color: rgba(255,255,255,0.7); margin: 16px auto 0; }
+
+    /* ABOUT CONTENT */
+    .about-sec { padding: 80px 0; background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-txt p { margin-bottom: 20px; font-size: 15px; color: var(--gray600); line-height: 1.8; }
+    .badge-box { background: var(--offwhite); border: 1px solid var(--gray200); padding: 24px; border-radius: var(--r-md); border-left: 4px solid var(--gold); margin-top: 24px; }
+    .badge-box h3 { font-family: var(--font-h); font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+
+    /* CTA */
+    .cta-sec { padding: 80px 0; background: var(--dark2); color: var(--white); text-align: center; }
+    .cta-sec .ttl { color: var(--white); }
+    .cta-sec .sub { color: rgba(255,255,255,0.7); margin: 16px auto 32px; }
+
+    /* FOOTER */
+    .footer { background: var(--dark); padding: 40px 0; border-top: 1px solid rgba(41,181,232,0.15); text-align: center; }
+    .footer__copy { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+    .footer__lic { font-size: 11px; color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav__links { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18220068805"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18220068805');
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__in">
+      <a href="index.html" class="nav__logo">
+        <img src="logo_letra.png" alt="Renovation Pro Painting LLC" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="our-work.html">Our Work</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="tel:+12406569560" class="nav__phone">(240) 656-9560</a>
+        <a href="free-quote.html" class="btn btn-gold">Free Quote</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="page-hd">
+  <div class="container">
+    <span class="lbl">Trusted Remodeling Contractors</span>
+    <h1 class="ttl">About Renovation Pro Painting LLC</h1>
+    <p class="sub">Delivering precision painting and home remodeling services across Maryland with honesty, craftsmanship, and full license coverage.</p>
+  </div>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about-sec">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-txt">
+        <span class="lbl">Our Commitment</span>
+        <h2 class="ttl">Built on Integrity & Detail</h2>
+        <p>At <strong>Renovation Pro Painting LLC</strong>, we treat every home as if it were our own. From minor touch-ups to whole-house interior and exterior transformations, we bring skilled expertise and top-grade materials to every job site.</p>
+        <p>Our team takes pride in punctuality, clean job sites, transparent quotes, and clear daily communication so you always know the exact progress of your renovation.</p>
+        
+        <div class="badge-box">
+          <h3>MHIC #168377 Licensed & Insured</h3>
+          <p style="font-size:13.5px;margin:0;">Fully certified under the Maryland Home Improvement Commission (MHIC) with full liability coverage for your complete peace of mind.</p>
+        </div>
+      </div>
+
+      <div>
+        <img src="interiorpainting/ip2.jpg" alt="Renovation Pro Painting Team Work" style="width:100%;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.1);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="container">
+    <h2 class="ttl">Ready to Work with Maryland's Preferred Contractors?</h2>
+    <p class="sub">Contact us today to schedule your free, no-obligation estimate.</p>
+    <a href="free-quote.html" class="btn btn-gold">Get a Free Quote Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer__copy">&copy; 2026 Renovation Pro Painting LLC. All rights reserved.</p>
+    <span class="footer__lic">MHIC #168377 &mdash; Licensed &amp; Fully Insured</span>
+  </div>
+</footer>
+
+</body>
+</html>

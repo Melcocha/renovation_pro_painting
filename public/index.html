@@ -332,6 +332,15 @@
       .areas__list { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18220068805"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18220068805');
+  </script>
 </head>
 <body>
 
@@ -786,7 +795,7 @@
         <h3>Get a Free Quote</h3>
         <p>We respond within 24 hours — always on time, always honest.</p>
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="7615fa8d-4752-4ee6-9578-900e0192c88c" />
+          <input type="hidden" name="access_key" value="88adec72-a5f2-41ff-9f3d-35312e2c9d70" />
           <input type="hidden" name="subject" value="New Quote Request — Renovation Pro Painting LLC" />
           <input type="hidden" name="from_name" value="Renovation Pro Painting Website" />
           <input type="hidden" name="redirect" value="false" />
@@ -817,6 +826,21 @@
               <option>Multiple Services</option>
               <option>Other</option>
             </select>
+          </div>
+          <div class="cform__row">
+            <div class="cform__field">
+              <label for="cf-date">Preferred Appointment Date</label>
+              <input type="date" id="cf-date" name="preferred_date" />
+            </div>
+            <div class="cform__field">
+              <label for="cf-time">Preferred Time Slot</label>
+              <select id="cf-time" name="preferred_time">
+                <option value="" disabled selected>Select time slot...</option>
+                <option value="Morning (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
+                <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
+                <option value="Evening (4:00 PM - 7:00 PM)">Evening (4:00 PM - 7:00 PM)</option>
+              </select>
+            </div>
           </div>
           <div class="cform__field">
             <label for="cf-msg">Project Description</label>
@@ -945,28 +969,51 @@
   // Contact form
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Track conversion start on focus/interaction
+    let conversionStarted = false;
+    contactForm.addEventListener('focusin', function() {
+      if (!conversionStarted && typeof gtag === 'function') {
+        gtag('event', 'conversion', {'send_to': 'AW-18220068805/zzVDCNn40bocEMXfgPBD'});
+        conversionStarted = true;
+      }
+    });
+
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {'send_to': 'AW-18220068805/zzVDCNn40bocEMXfgPBD'});
+      }
       const btn = document.getElementById('cfSubmit');
       const msg = document.getElementById('cfMsg');
       btn.disabled = true;
       btn.textContent = 'Sending...';
       msg.className = 'cform__msg';
       try {
+        const formData = new FormData(contactForm);
+        const fileInput = contactForm.querySelector('input[type="file"]');
+        if (fileInput && fileInput.files.length === 0) {
+          formData.delete('attachment');
+        }
+
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: new FormData(contactForm)
+          body: formData
         });
         const data = await res.json();
+        console.log('Web3Forms response:', data);
         if (data.success) {
-          msg.textContent = '✓ Message sent! We\'ll get back to you within 24 hours.';
+          msg.textContent = '✓ Message sent! Redirecting...';
           msg.className = 'cform__msg cform__msg--ok';
           contactForm.reset();
+          setTimeout(() => {
+            window.location.href = 'thank-you.html';
+          }, 800);
         } else {
-          throw new Error('Send failed');
+          throw new Error(data.message || 'Send failed');
         }
-      } catch {
-        msg.textContent = '✗ Something went wrong. Please call us directly at (240) 656-9560.';
+      } catch (err) {
+        console.error('Submit error:', err);
+        msg.textContent = '✗ ' + (err.message || 'Something went wrong. Please call us directly at (240) 656-9560.');
         msg.className = 'cform__msg cform__msg--err';
       }
       btn.disabled = false;
