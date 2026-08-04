@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de Verificación Google Ads - Renovation Pro Painting LLC</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 18mm 15mm 18mm 15mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 24px 32px;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    /* HEADER STYLES */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: #0284c7;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .badge-status {
+      background-color: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* META INFO BOX */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      border-left: 4px solid #0284c7;
+      padding-left: 10px;
+      margin: 24px 0 14px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* TABLE STYLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 12.5px;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    th:first-child {
+      border-top-left-radius: 8px;
+    }
+    th:last-child {
+      border-top-right-radius: 8px;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    .tag-code {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+    }
+
+    .status-ok {
+      color: #166534;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* CARDS */
+    .card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: #0f172a;
+    }
+
+    .card-body {
+      font-size: 12.5px;
+      color: #334155;
+    }
+
+    .url-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .url-item {
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 11.5px;
+      color: #0369a1;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* FOOTER */
+    .report-footer {
+      margin-top: 32px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #64748b;
+      font-size: 11px;
+    }
+
+    .print-btn-container {
+      margin-bottom: 20px;
+      text-align: right;
+    }
+
+    @media print {
+      .print-btn-container { display: none; }
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">
+      <h1 class="brand-title">Renovation Pro Painting LLC</h1>
+      <span class="brand-sub">INFORME EJECUTIVO DE CONFIGURACIÓN Y AUDITORÍA DE GOOGLE ADS</span>
+    </div>
+    <div>
+      <span class="badge-status">✓ 100% COMPLETADO</span>
+    </div>
+  </div>
+
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="meta-label">Proyecto</span>
+      <span class="meta-value">Renovation Pro Painting</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">ID de Cuenta Google Ads</span>
+      <span class="meta-value">AW-18220068805</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Estratega de Google Ads</span>
+      <span class="meta-value">Junel Mahusay</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Estado del Sitio</span>
+      <span class="meta-value">Listo para Producción</span>
+    </div>
+  </div>
+
+  <div class="section-title">1. Verificación Punto por Punto de Requerimientos</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Requerimiento</th>
+        <th style="width: 35%;">Descripción Técnica</th>
+        <th style="width: 25%;">Identificador / Código</th>
+        <th style="width: 15%;">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Google Tag Global</strong></td>
+        <td>Instalado en el <code>&lt;head&gt;</code> de las 8 páginas principales del sitio.</td>
+        <td><span class="tag-code">AW-18220068805</span></td>
+        <td><span class="status-ok">✓ Cumplido</span></td>
+      </tr>
+      <tr>
+        <td><strong>2. Inicio de Confirmación</strong></td>
+        <td>Evento al interactuar/enfocar (focusin) o enviar formularios de cotización.</td>
+        <td><span class="tag-code">zzVDCNn40bocEMXfgPBD</span></td>
+        <td><span class="status-ok">✓ Cumplido</span></td>
+      </tr>
+      <tr>
+        <td><strong>3. Lead Completado</strong></td>
+        <td>Evento ejecutado en la página de confirmación al terminar el envío.</td>
+        <td><span class="tag-code">keC3CJvzvrscEMXfgPBD</span></td>
+        <td><span class="status-ok">✓ Cumplido</span></td>
+      </tr>
+      <tr>
+        <td><strong>4. Página 'Thank You'</strong></td>
+        <td>Redirección autolink tras procesar exitosamente la solicitud en Web3Forms.</td>
+        <td><span class="tag-code">thank-you.html</span></td>
+        <td><span class="status-ok">✓ Cumplido</span></td>
+      </tr>
+      <tr>
+        <td><strong>5. URLs Únicas</strong></td>
+        <td>URLs estáticas e independientes para cada sección del menú de navegación.</td>
+        <td><span class="tag-code">Rutas Estáticas</span></td>
+        <td><span class="status-ok">✓ Cumplido</span></td>
+      </tr>
+      <tr>
+        <td><strong>6. Tracking de Llamadas</strong></td>
+        <td>Detector de clic en enlace de llamadas <code>(240) 656-9560</code> (Mejora).</td>
+        <td><span class="tag-code">phone_call_click</span></td>
+        <td><span class="status-ok">✓ Cumplido</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">2. Detalle de Implementaciones y URLs del Sitio</div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">URLs Únicas del Proyecto (Requisito 2nd)</span>
+      <span class="status-ok">✓ Verificadas</span>
+    </div>
+    <div class="card-body">
+      Cada sección del sitio posee una ruta limpia e independiente para medir exactamente el rendimiento publicitario:
+      <div class="url-list">
+        <div class="url-item">/services.html</div>
+        <div class="url-item">/our-work.html</div>
+        <div class="url-item">/videos.html</div>
+        <div class="url-item">/about.html</div>
+        <div class="url-item">/contact.html</div>
+        <div class="url-item">/free-quote.html</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Flujo de Redirección y Atribución de Conversión</span>
+      <span class="status-ok">✓ Probado y Operativo</span>
+    </div>
+    <div class="card-body">
+      Al completarse cualquier formulario (Cotización o Contacto), el sistema procesa los datos vía Web3Forms y realiza una redirección automática a <code>thank-you.html</code>, donde se dispara la conversión principal sin duplicaciones.
+    </div>
+  </div>
+
+  <div class="report-footer">
+    <span>Renovation Pro Painting LLC &mdash; Maryland Licensed & Insured (MHIC #168377)</span>
+    <span>Informe Técnico de Validación Google Ads &bull; 2026</span>
+  </div>
+
+</body>
+</html>

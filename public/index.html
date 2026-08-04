@@ -339,17 +339,21 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'AW-18220068805');
+    gtag('config', 'AW-18220068805', {
+      'phone_conversion_number': '(240) 656-9560'
+    });
 
     // Phone call click tracking
     document.addEventListener('DOMContentLoaded', function() {
       document.addEventListener('click', function(e) {
         const telLink = e.target.closest('a[href^="tel:"]');
         if (telLink && typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18220068805'
+          });
           gtag('event', 'phone_call_click', {
             'event_category': 'contact',
-            'event_label': telLink.getAttribute('href'),
-            'send_to': 'AW-18220068805'
+            'event_label': telLink.getAttribute('href')
           });
         }
       });
